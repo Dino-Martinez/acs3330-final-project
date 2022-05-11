@@ -2,17 +2,23 @@
   "name": "ow-stats",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^7.1.0",
+    "express": "^4.18.1",
+    "node-fetch": "2.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-redux": "^8.0.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"cd api && node .\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,7 +27,22 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-var": "error"
+    }
   },
   "browserslist": {
     "production": [

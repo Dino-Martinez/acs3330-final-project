@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+.container {
+  width: var(--size-fluid-10);
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
+.container > * {
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.portrait {
+  align-self: baseline;
+  position: relative;
+  width: 128px;
+  aspect-ratio: 1;
+}
+.portrait > img {
+  object-fit: none;
+  position: absolute;
+  width:100%;
+}
+.icon {
+clip-path: polygon(10% 25%, 50% 0, 90% 25%, 90% 75%, 50% 100%, 10% 75%);
 }
